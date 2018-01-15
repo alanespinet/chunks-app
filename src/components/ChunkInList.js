@@ -1,4 +1,6 @@
 import React from 'react';
+import { arrayToString } from '../util/arrays.js';
+
 
 
 export default class ChunkInList extends React.Component {
@@ -14,9 +16,10 @@ export default class ChunkInList extends React.Component {
 
   render(){
     return (
-      <div onClick={this.handleSelection}>
-        <button onClick={this.handleDeletion}>X</button>
+      <div onClick={this.handleSelection} className="chunkInList">
+        <button onClick={this.handleDeletion}><i className="fa fa-times-circle" aria-hidden="true"></i></button>
         <p>{this.props.chunk.title}</p>
+        <p className="languages">{arrayToString(this.props.chunk.languages)}</p>
       </div>
     );
   }

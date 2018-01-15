@@ -1,11 +1,12 @@
 import React from 'react';
 
 export default () => (
-  <div>
-    <img src="" alt="Chunks Logo" />
-    <div>
-      <p>Because everyone has the right to program safer. Save your code</p>
-      <p>chunks for further using in a fast an organized way</p>
+  <div className="staticHeader">
+    <img src="/images/logo.png" alt="Chunks Application Logo" />
+    <div className="staticHeader__text">
+      <p className="desktop-tablet">Because everyone has the right to program safer. Save your code</p>
+      <p className="desktop-tablet">chunks for further using in a fast an organized way...</p>
+      <p className="mobile">Because everyone has the right to program safer. Save your code chunks for further using in a fast an organized way...</p>
     </div>
   </div>
 );

@@ -1,0 +1,44 @@
+.chunkPage .titleText,
+.chunkPage .titleArray {
+  display: flex;
+  margin: 15px 0;
+}
+
+.chunkPage .titleText:first-child { margin-top: 0; }
+
+.chunkPage .titleText p,
+.chunkPage .titleArray p {
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.chunkPage #singleCodeText {
+  min-height: 500px;
+  background-color: #cecece;
+  width: 100%;
+  border: none;
+  resize: none;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.chunkPage .singleCodeBlock { margin-top: 60px; }
+.chunkPage .singleCodeBlock h3 { padding-bottom: 10px; }
+.chunkPage .singleCodeCode { position: relative; }
+
+.chunkPage .singleCodeCode button {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  background-color: #f2f2f2;
+  width: 36px;
+  height: 36px;
+  outline: none;
+}
+
+.chunkPage .singleCodeCode button i {
+  font-size: 20px;
+  color: #2f2f2f;
+}

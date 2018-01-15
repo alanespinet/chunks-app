@@ -1,0 +1,52 @@
+.filterPanel {
+  background-color: #cecece;
+  margin-top: 40px;
+  padding: 20px;
+  width: 50%;
+  min-height: 250px;
+}
+
+.filterPanel .filtersNote {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.filterPanel .filterBlocks {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.filterPanel .filterBlocks > div {
+  flex-basis: 45%;
+}
+
+.filterPanel .filterButton a {
+  border: none;
+  background-color: $red;
+  padding: 15px 20px;
+  color: #fff;
+  width: 150px;
+  margin: 30px auto 0;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  transition: all .3s ease;
+}
+
+.filterPanel .filterButton a i { margin-left: 10px; }
+
+.filterPanel .filterButton a:hover {
+  cursor: pointer;
+  background-color: darken($red, 40%);
+}
+
+
+@media (max-width: 991px){
+  .filterPanel {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

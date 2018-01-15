@@ -15,6 +15,12 @@ export const getChunk = ( title ) => ({
 });
 
 
+export const getChunkById = ( id ) => ({
+  type: 'GET_CHUNK_BY_ID',
+  id
+});
+
+
 export const deleteChunk = ( title ) => ({
   type: 'DELETE_CHUNK',
   title

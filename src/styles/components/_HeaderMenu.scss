@@ -1,0 +1,34 @@
+.headerMenu {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 60px
+}
+
+.headerMenu a {
+  padding: 11px 10px;
+  text-decoration: none;
+  color: $green-dark;
+  transition: all .3s ease;
+}
+
+.headerMenu a:hover,
+.headerMenu a.active { background-color: $green-light; }
+
+
+.headerMenu button {
+  background-color: transparent;
+  border: none;
+  color: $green-dark;
+  margin-left: 100px;
+  padding: 11px 10px;
+  transition: all .3s ease;
+}
+
+.headerMenu button:hover { background-color: $red; }
+
+
+@media (max-width: 767px){
+  .headerMenu { padding-left: 15px; }
+  .headerMenu button { margin-left: 10px; }
+}

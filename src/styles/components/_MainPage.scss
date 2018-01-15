@@ -1,0 +1,13 @@
+.mainPage {
+  display: flex;
+
+  & > .mainLeftPanel { flex-basis: 75%; }
+  & > .selectedChunk { flex-grow: 1; }
+}
+
+
+@media (max-width: 767px){
+  .mainPage {
+    flex-direction: column;
+  }
+}

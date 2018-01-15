@@ -1,2 +1,20 @@
 @import './base/settings';
 @import './base/base';
+
+@import './components/StaticHeader';
+@import './components/StaticFooter';
+@import './components/HeaderMenu';
+@import './components/ChunkList';
+@import './components/ChunkInList';
+@import './components/MainPage';
+@import './components/SelectedChunk';
+@import './components/TitleText';
+@import './components/TitleArray';
+@import './components/FilterPanel';
+@import './components/FilterBlock';
+@import './components/FilterInput';
+@import './components/FilterSingle';
+@import './components/FilterList';
+@import './components/AddChunkPage';
+@import './components/ChunkPage';
+@import './components/AboutPage';

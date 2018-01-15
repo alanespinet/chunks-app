@@ -14,3 +14,56 @@ button {
 button:disabled {
   cursor: default;
 }
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: $green-dark;
+}
+
+h1, h2, h3, h4, h5, h6, p,
+a, button, input, textarea,
+ul, ol, li {
+  font-family: 'Lato', sans-serif;
+}
+
+.content-panel-no-menu {
+  min-height: calc(100vh - 190px);
+}
+
+.content-panel {
+  min-height: calc(100vh - 230px);
+  padding: 60px;
+}
+
+
+
+@media ( min-width: 992px ) {
+  .desktop { display: block; }
+  .desktop-tablet { display: block; }
+  .tablet { display: none; }
+  .mobile { display: none; }
+}
+
+@media ( max-width: 991px ) {
+  .desktop { display: none; }
+  .desktop-tablet { display: block; }
+  .tablet { display: block; }
+  .mobile { display: none; }
+
+  .content-panel {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media ( max-width: 767px ) {
+  .desktop { display: none; }
+  .desktop-tablet { display: none; }
+  .tablet { display: none; }
+  .mobile { display: block; }
+
+  .content-panel {
+    padding-left: 15px;
+    padding-right: 15px; 
+  }
+}

@@ -11,6 +11,14 @@ import App from './components/App';
 
 
 
+let unsubscribe = store.subscribe( () => {
+  console.log(store.getState());
+} );
+
+unsubscribe();
+
+
+
 const jsx = (
   <div>
     <Provider store={store}>

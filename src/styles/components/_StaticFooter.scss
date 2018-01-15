@@ -1,0 +1,17 @@
+.staticFooter {
+  background-color: $green-light;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.staticFooter p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.staticFooter a {
+  color: $green-dark;
+  font-weight: bold;
+}

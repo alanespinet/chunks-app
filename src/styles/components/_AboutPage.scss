@@ -1,0 +1,17 @@
+.aboutPage-photo img { border-radius: 100%; max-width: 150px; }
+.aboutPage-wrapper { display: flex; }
+.aboutPage-text { margin-left: 60px; }
+
+.aboutPage-text p {
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.aboutPage-text a { color: #2f2f2f; }
+
+
+@media (max-width: 767px){
+  .aboutPage-wrapper { flex-direction: column; }
+  .aboutPage-text { margin-left: 0; margin-top: 30px; }
+  .aboutPage-photo { text-align: center; }
+}

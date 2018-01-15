@@ -6,6 +6,7 @@ import ChunkInList from './ChunkInList';
 import * as actions from '../redux/actions/actions';
 
 import store from '../redux/store/store';
+import chunksSelector from '../redux/selectors/chunks';
 
 
 
@@ -24,10 +25,10 @@ class ChunkList extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="chunkList">
         <h2>Your recorded chunks:</h2>
-        <div>
-          {this.props.chunks.map( (chunk) => (
+        <div className="list">
+          {this.props.chunksList.map( (chunk) => (
             <ChunkInList
               key={chunk.title}
               chunk={chunk}
@@ -44,7 +45,7 @@ class ChunkList extends React.Component {
 
 
 const mapStateToProps = (state) => ({
-  ...state
+  chunksList: chunksSelector( state.chunksReducer.chunks, state.filtersReducer.languages, state.filtersReducer.keywords )
 });
 
 

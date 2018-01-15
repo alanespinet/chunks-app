@@ -1,0 +1,96 @@
+.addChunkPage__panels {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .leftPanel { flex-basis: 400px; }
+
+  .rightPanel {
+    flex-grow: 1;
+    margin-left: 60px;
+    align-self: stretch;
+  }
+
+  #txtChunkCode {
+    height: calc(100% - 45px);
+    background-color: #cecece;
+    border-bottom: none;
+    margin-top: 15px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: "Courier New", Courier, sans-serif;
+    overflow-y: scroll;
+  }
+
+  .controlGroup { margin-bottom: 15px; }
+
+  label {
+    font-size: 13px;
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    font-weight: bold;
+    display: block;
+  }
+
+  input, textarea {
+    border: none;
+    border-bottom: 1px solid #000;
+    display: block;
+    width: 100%;
+    outline: none;
+    height: 30px;
+    font-weight: 300;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    height: 120px;
+    resize: none;
+  }
+
+  .filterList {
+    background-color: #cecece;
+    padding: 10px;
+    min-height: 60px;
+  }
+
+  .filterSingle { height: 21px; }
+}
+
+.addChunkPage .addButton {
+  background-color: $red;
+  border: none;
+  color: $gray-light;
+  padding: 10px 30px;
+  transition: all .3s ease;
+  display: inline-block;
+}
+
+.addChunkPage .addButton:hover {
+  background-color: darken($red, 40%);
+}
+
+.addButtonWrapper { text-align: right; }
+
+
+@media (max-width: 991px){
+  .addChunkPage__panels .leftPanel { flex-basis: 300px; }
+  .addChunkPage__panels .rightPanel { margin-left: 5px; }
+}
+
+@media (max-width: 767px){
+  .addChunkPage__panels {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .addChunkPage__panels .leftPanel { flex-basis: 100%; }
+  .addChunkPage__panels .rightPanel { height: 450px; }
+}
+
+
+
+
+
+
+//

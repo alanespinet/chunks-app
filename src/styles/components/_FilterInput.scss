@@ -1,0 +1,25 @@
+.filterInput { margin-bottom: 15px; }
+
+.filterInput form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.filterInput button {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+}
+
+.filterInput button:hover { cursor: pointer; }
+
+.filterInput input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #2f2f2f;
+  outline: none;
+  height: 30px;
+}

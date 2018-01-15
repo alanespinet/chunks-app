@@ -1,0 +1,46 @@
+.chunkInList {
+  background-color: $green-light;
+  flex-basis: 32%;
+  margin-bottom: 20px;
+  position: relative;
+  height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  padding-right: 28px;
+  box-sizing: border-box;
+
+  transition: all .3s ease;
+}
+
+.chunkInList p { transition: all .3s ease; }
+
+.chunkInList:hover {
+  background-color: $green-dark;
+  cursor: pointer;
+}
+
+.chunkInList:hover p {
+  color: #f2f2f2;
+}
+
+.chunkInList button {
+  background-color: #fff;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $red;
+  transition: all .3s ease;
+}
+
+.chunkInList .languages { font-weight: bold; font-size: 14px; }
+.chunkInList button:hover { background-color: $yellow; }
+
+
+
+@media (max-width: 991px){
+  .chunkInList { flex-basis: 49%; }
+}

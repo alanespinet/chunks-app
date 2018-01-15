@@ -1,0 +1,22 @@
+.filterSingle {
+  display: flex;
+  padding: 5px;
+  background-color: #f2f2ce;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.filterSingle p {
+  font-weight: 300;
+  padding-right: 10px;
+}
+
+.filterSingle button {
+  background-color: transparent;
+  border: none;
+  color: #ff6347;
+  outline: none;
+}
+
+.filterSingle button:hover { cursor: pointer; }
