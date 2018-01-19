@@ -10,8 +10,8 @@ import { setFilter } from '../redux/actions/filters';
 class FiltersPanel extends React.Component {
 
   state = {
-    languages: ['PHP', 'JS'],
-    keywords: ['Wordpress', 'Theme', 'Hook']
+    languages: [],
+    keywords: []
   }
 
   onHandleAddLanguage = ( language ) => {
