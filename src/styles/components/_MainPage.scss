@@ -2,7 +2,7 @@
   display: flex;
 
   & > .mainLeftPanel { flex-basis: 75%; }
-  & > .selectedChunk { flex-grow: 1; }
+  & > .selectedChunk { flex-basis: 25%; }
 }
 
 
@@ -10,4 +10,6 @@
   .mainPage {
     flex-direction: column;
   }
+
+  .mainPage > .selectedChunk { flex-basis: 100%; }
 }

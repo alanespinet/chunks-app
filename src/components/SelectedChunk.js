@@ -9,7 +9,7 @@ class SelectedChunk extends React.Component {
 
 
   onHandleOpen = () => {
-    var id = this.props.chunksReducer.selectedChunk.id;
+    var id = this.props.chunksReducer.selectedChunk.chunk_id;
     if( id !== undefined && id !== '0' ) this.props.history.push(`/chunk/${id}`);
     else alert('You have to select a chunk to open first!');
   }

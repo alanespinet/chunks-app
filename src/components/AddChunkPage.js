@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import uuid from 'uuid';
 
-import { addChunk } from '../redux/actions/actions';
+import { startAddChunk } from '../redux/actions/actions';
 import FilterBlock from './FilterBlock';
 
 
@@ -11,7 +11,7 @@ class AddChunkPage extends React.Component {
 
   state = {
     chunk: {
-      id: '',
+      chunk_id: '',
       title: '',
       description: '',
       languages: [],
@@ -24,13 +24,14 @@ class AddChunkPage extends React.Component {
     this.setState( (prevState) => ({
       chunk: {
         ...prevState.chunk,
-        id: uuid()
+        chunk_id: uuid()
       }
     }));
   }
 
   onHandleAddChunk = () => {
-    this.props.dispatch( addChunk(this.state.chunk) );
+    var strcode = this.state.chunk.code;
+    this.props.dispatch( startAddChunk(this.state.chunk) );
     this.props.history.push('/');
   }
 

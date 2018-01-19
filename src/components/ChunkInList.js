@@ -7,11 +7,11 @@ export default class ChunkInList extends React.Component {
 
   handleDeletion = (e) => {
     e.stopPropagation();
-    this.props.handleDeletion( this.props.chunk.title );
+    this.props.handleDeletion( this.props.chunk.chunk_id );
   }
 
   handleSelection = () => {
-    this.props.handleSelection( this.props.chunk.title );
+    this.props.handleSelection( this.props.chunk.chunk_id );
   }
 
   render(){

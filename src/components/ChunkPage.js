@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { getChunkById } from '../redux/actions/actions';
+import { textWithBR } from '../util/strings.js';
 import TitleText from './partials/TitleText';
 import TitleArray from './partials/TitleArray';
 
@@ -18,7 +19,11 @@ class ChunkPage extends React.Component {
         <div className="singleCodeBlock">
           <h3>Code:</h3>
           <div className="singleCodeCode">
-            <div id="singleCodeText">{this.props.selectedChunk.code}</div>
+            <div id="singleCodeText">
+              {this.props.selectedChunk.code.split('\n').map( (item, key) => {
+                return <span key={key}>{item}<br/></span>;
+              } )}
+            </div>
           </div>
         </div>
       </div>
@@ -27,7 +32,7 @@ class ChunkPage extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-  selectedChunk: state.chunksReducer.chunks.filter( chunk => chunk.id === props.match.params.id )[0]
+  selectedChunk: state.chunksReducer.chunks.filter( chunk => chunk.chunk_id === props.match.params.id )[0]
 });
 
 export default connect(mapStateToProps)(ChunkPage);

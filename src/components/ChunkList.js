@@ -13,14 +13,17 @@ import chunksSelector from '../redux/selectors/chunks';
 class ChunkList extends React.Component {
 
 
-  handleDeletion = (title) => {
-    this.props.dispatch( actions.deleteChunk(title) );
+  handleDeletion = (id) => {
+    this.props.dispatch( actions.startDeleteChunk(id) );
   }
 
-  handleSelection = (title) => {
-    this.props.dispatch( actions.getChunk(title) );
+  handleSelection = (id) => {
+    this.props.dispatch( actions.getChunk(id) );
   }
 
+  componentWillMount = () => {
+    this.props.dispatch( actions.startSetChunks() );
+  }
 
   render() {
 
@@ -44,9 +47,11 @@ class ChunkList extends React.Component {
 };
 
 
-const mapStateToProps = (state) => ({
-  chunksList: chunksSelector( state.chunksReducer.chunks, state.filtersReducer.languages, state.filtersReducer.keywords )
-});
+const mapStateToProps = (state) => {
+  return {
+    chunksList: chunksSelector( state.chunksReducer.chunks, state.filtersReducer.languages, state.filtersReducer.keywords )
+  };
+};
 
 
 export default connect(mapStateToProps)(ChunkList);
