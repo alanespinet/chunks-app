@@ -21,9 +21,9 @@ class ChunkList extends React.Component {
     this.props.dispatch( actions.getChunk(id) );
   }
 
-  componentWillMount = () => {
-    this.props.dispatch( actions.startSetChunks() );
-  }
+  // componentWillMount = () => {
+  //   this.props.dispatch( actions.startSetChunks() );
+  // }
 
   render() {
 

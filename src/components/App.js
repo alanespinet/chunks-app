@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
+import { Router, Route, Switch } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 
 import StaticHeader from './StaticHeader';
 import StaticFooter from './StaticFooter';
@@ -10,8 +10,13 @@ import AboutPage from './AboutPage';
 import PageNotFound from './PageNotFound';
 import HeaderMenu from './HeaderMenu';
 import ChunkPage from './ChunkPage';
+import LoginPage from './LoginPage';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 
+
+export const history = createHistory();
 
 export default class App extends React.Component {
 
@@ -19,18 +24,18 @@ export default class App extends React.Component {
     return(
       <div>
         <StaticHeader />
-        <BrowserRouter>
+        <Router history={history}>
           <div>
-            <HeaderMenu />
             <Switch>
-              <Route path="/" component={MainPage} exact={true} />
-              <Route path="/chunk/:id" component={ChunkPage} />
-              <Route path="/add" component={AddChunkPage} exact={true} />
-              <Route path="/about" component={AboutPage} exact={true} />
+              <PublicRoute path="/" component={LoginPage} exact={true} />
+              <PrivateRoute path="/chunks" component={MainPage} exact={true} />
+              <PrivateRoute path="/chunk/:id" component={ChunkPage} />
+              <PrivateRoute path="/add" component={AddChunkPage} exact={true} />
+              <PrivateRoute path="/about" component={AboutPage} exact={true} />
               <Route component={PageNotFound} />
             </Switch>
           </div>
-        </BrowserRouter>
+        </Router>
 
         <StaticFooter />
       </div>

@@ -30,7 +30,7 @@ export const getChunks = () => ({
 
 export const startSetChunks = () => {
   return (dispatch) => {
-    axios.get('https://chunksdbserver.herokuapp.com/chunks')
+    return axios.get('https://chunksdbserver.herokuapp.com/chunks')
       .then( (response) => {
         dispatch( setChunks(response.data) );
       });
