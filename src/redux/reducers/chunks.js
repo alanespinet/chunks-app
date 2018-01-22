@@ -2,7 +2,7 @@ const defaultState = {
   chunks: [],
 
   selectedChunk: {
-    id: '0',
+    chunk_id: '0',
     title: 'selected chunk title',
     description: 'selected chunk description',
     languages: ['L1', 'L2', 'L3'],

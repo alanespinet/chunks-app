@@ -1,20 +1,25 @@
-import axios from 'axios';
-
+import { database } from '../../firebase/firebase';
+const usersdb = database.ref().child('users');
 
 export const startAddChunk = ( chunk ) => {
+  return (dispatch, getState) => {
+    const uid = getState().authReducer.uid;
+    const chunk_id = chunk.chunk_id;
+    const chunkRest = {
+      title: chunk.title,
+      description: chunk.description,
+      languages: chunk.languages,
+      keywords: chunk.keywords,
+      code: chunk.code
+    };
 
-  console.log(JSON.stringify(chunk));
-
-  return (dispatch) => {
-    axios.post('https://chunksdbserver.herokuapp.com/chunks', chunk)
-      .then( (response) => {
-        console.log(response);
-        dispatch( addChunk(response.data) );
-      })
-      .catch( (e) => {
-        console.log(e.response);
-      });
-  };
+    usersdb.child(`${uid}/chunks/${chunk_id}`).set(chunkRest).then( () => {
+      dispatch( addChunk({
+        chunk_id: chunk.chunk_id,
+        ...chunk
+      }) );
+    });
+  }
 };
 
 export const addChunk = ( chunk ) => ({
@@ -29,12 +34,22 @@ export const getChunks = () => ({
 
 
 export const startSetChunks = () => {
-  return (dispatch) => {
-    return axios.get('https://chunksdbserver.herokuapp.com/chunks')
-      .then( (response) => {
-        dispatch( setChunks(response.data) );
+  return (dispatch, getState) => {
+    const uid = getState().authReducer.uid;
+    return usersdb.child(`${uid}/chunks`).once('value').then( (snapshot) => {
+      let chunks = [];
+
+      snapshot.forEach( (childSnapshot) => {
+        chunks.push({
+          chunk_id: childSnapshot.key,
+          ...childSnapshot.val()
+        });
       });
-  };
+
+      console.log(chunks);
+      dispatch( setChunks(chunks) );
+    });
+  }
 }
 
 export const setChunks = (chunks) => ({
@@ -56,12 +71,12 @@ export const getChunkById = ( id ) => ({
 
 
 export const startDeleteChunk = ( id ) => {
-  return (dispatch) => {
-    axios.delete(`https://chunksdbserver.herokuapp.com/chunks/${id}`)
-      .then( (response) => {
-        dispatch(deleteChunk(response.data.chunk_id));
-      });
-  };
+  return (dispath, getState) => {
+    const uid = getState().authReducer.uid;
+    return usersdb.child(`${uid}/chunks`).child(id).remove().then( () => {
+      dispath( deleteChunk(id) );
+    });
+  }
 }
 
 

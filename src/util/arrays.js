@@ -1,6 +1,9 @@
 // turns an Array into a String with its values separated by commas and spaces,
 // so [1, 2, 3] becames "1, 2, 3"
-export const arrayToString = (array) => (array.toString()).replace(/,/g, ', ');
+export const arrayToString = (array) => {
+  if(!array) return "";
+  return (array.toString()).replace(/,/g, ', ');
+};
 
 // takes an Array of Objects where every Object has an Array, represented by the second
 // parameter (string) and filters them in a way that only those Objects whose Array contains
